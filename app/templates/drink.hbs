@@ -1,16 +1,29 @@
 <h3>Details about this beverage:</h3>
 
-Name: {{model.name}}<br>
-Type: {{model.type}}<br>
-Subtype: {{model.subtype}}<br>
-<br><br>
+{{#if isEditing}}
+  {{partial 'drink/edit'}}
+  <button class='btn btn-primary' {{action 'doneEditing'}}>Done</button>
+{{else}}
+  Name: &nbsp;&nbsp;&nbsp; {{model.name}}<br>
+  Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{model.type}}<br>
+  Subtype: &nbsp;{{model.subtype}}<br><br><br>
+  <button class='btn btn-warning' {{action 'edit'}}>Edit</button>
+  <button class='btn btn-danger' {{action 'delete'}}>Delete</button>
+{{/if}}<br>
 
-<h4>What people are saying about {{model.name}}:</h4>
-<ul>
-  {{#each comment in model.comments}}
-    <li>{{comment.user}} says: <br> {{comment.text}}</li>
-  {{/each}}
-</ul>
+<div class="chat">
+  <h4>What people are saying about {{model.name}}:</h4>
+  <ul>
+    {{#each comment in model.comments}}
+      <li><span class="comment-header">{{comment.user}} says: </span><br>
+        <div class="bubble left">
+          <span class="tail">&nbsp;</span>
+          {{comment.text}}
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
 <br><br>
 <div class="add-comment">
   {{#link-to 'new-comment'}}<button class="btn btn-info">Add a comment?</button>{{/link-to}}

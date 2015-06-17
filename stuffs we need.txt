@@ -1,22 +1,22 @@
 models - beverage
-          -name
-          -type
-          -subtype
+          -name - DONE
+          -type - DONE
+          -subtype - DONE
           -rating
         - comment
-          - body
+          - body _ DONE
           - upvote?
 
-templates - home, drink types, new drink, drink-type-page,
-            drink-type-individual page,
+templates - DONE: home, new drink, all drinks, drink-individual page, comments
+            Not Done: Types sorting, static data
 
 features:
-  - As a reviewer, I want to be able to add drinks I have tried.
-  - As a user, I want to see a list of all the drinks that have been entered.
+  - As a reviewer, I want to be able to add drinks I have tried.              - DONE
+  - As a user, I want to see a list of all the drinks that have been entered. - DONE
   - As a user, I want to see a featured drink on the landing page.
-  - As a user, I want to be able to select a drink from a list of drinks and see more details.
-  - As a user or reviewer, I want to be able to add comments to a drink.
+  - As a user, I want to be able to select a drink from a list of drinks and see more details. - DONE
+  - As a user or reviewer, I want to be able to add comments to a drink. - DONE
   - As a reviewer, I want to add a rating to a drink.
-  - As a user, I want to be able to select a drink and see the details for that drink.
+  - As a user, I want to be able to select a drink and see the details for that drink. - DONE
   - As a user, I want to be able to see which drinks have the most comments.
   - As a user, I want to filter drinks by various criteria like type, subtype, rating

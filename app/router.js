@@ -9,7 +9,6 @@ Router.map(function() {
   this.route('home');
   this.resource('drinks', function() {   // alphabetical by name
     this.route('new');
-    // this.resource('new-comment');
     this.resource('drink', { path: ':drink_id' }, function() {
       this.resource('new-comment');
     });

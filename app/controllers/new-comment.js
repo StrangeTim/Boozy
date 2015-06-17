@@ -4,17 +4,25 @@ var NewCommentController = {
   needs: ['drink'],
   actions: {
     addComment: function() {
+      var drink = this.get('controllers.drink.model');
+
       var newComment = this.store.createRecord('comment', {
         user: this.get('user'),
         text: this.get('text'),
       });
-      newComment.save();
 
-      var drink = this.get('controllers.drink.model');
-      drink.get('comments').pushObject(newComment);
-      this.set('user', "");
-      this.set('text', "");
-      drink.save();
+      newComment.save().then(function() {
+        drink.get('comments').pushObject(newComment);
+
+        drink.save().then(function() {
+          drink.setProperties({
+            user: '',
+            text: ''
+          });
+        });
+      });
+
+      this.transitionToRoute('drinks');
     }
   }
 };
