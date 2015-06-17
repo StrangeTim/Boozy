@@ -1,0 +1,19 @@
+<h3>Details about this beverage:</h3>
+
+Name: {{model.name}}<br>
+Type: {{model.type}}<br>
+Subtype: {{model.subtype}}<br>
+<br><br>
+
+<h4>What people are saying about {{model.name}}:</h4>
+<ul>
+  {{#each comment in model.comments}}
+    <li>{{comment.user}} says: <br> {{comment.text}}</li>
+  {{/each}}
+</ul>
+<br><br>
+<div class="add-comment">
+  {{#link-to 'new-comment'}}<button class="btn btn-info">Add a comment?</button>{{/link-to}}
+</div>
+
+{{outlet}}

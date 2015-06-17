@@ -1,0 +1,11 @@
+<form>
+  <div class="form-group">
+    <label for="user">Name: </label>
+    {{input value=user id='user' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label for="text">Text: </label>
+    {{textarea value=text id='text' class='form-control'}}
+  </div>
+  <button class="btn btn-default" {{action 'addComment'}}>Add</button>
+</form>

@@ -1,0 +1,23 @@
+<h1>All drinks in our database:</h1>
+
+<div class="col-md-6">
+  <ul>
+    {{#each drink in model}}
+      <li>
+        {{#link-to 'drink' drink.id}}
+          {{drink.name}}
+          {{drink.type}}
+          {{drink.subtype}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class='add-drink'>
+    {{#link-to 'drinks.new'}}Add a drink?{{/link-to}}
+  </div>
+</div>
+
+<div class="col-md-6">
+  {{outlet}}
+</div>

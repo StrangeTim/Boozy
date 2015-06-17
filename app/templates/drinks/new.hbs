@@ -1,0 +1,19 @@
+<br><br><br><br>
+
+<h1>More Booze!</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Name: </label>
+    {{input value=name id='name' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label for="type">Type: </label>
+    {{input value=type id='type' class='form-control'}}
+  </div>
+  <div class="form-group">
+    <label for="subtype">Sub-Type: </label>
+    {{input value=subtype id='subtype' class='form-control'}}
+  </div>
+  <button class="btn btn-default" {{action 'addDrink'}}>Add</button>
+</form>
