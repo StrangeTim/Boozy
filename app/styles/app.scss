@@ -1,5 +1,12 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding: 60px;
+  padding-top: 50px;
+  // height: 100%;
+  // background: url("/assets/bar.jpeg") no-repeat;
+  // background-size: cover;
 }
 
 .chat {
@@ -79,4 +86,28 @@ body {
 .comment-header {
   font-family: Helvetica;
   font-size: 22px;
+}
+
+.drink-list {
+  margin-top: 15px;
+
+  li {
+    margin: 3px 0;
+    border-bottom: 1px solid #ddd;
+    a {
+      display: block;
+      line-height: 30px;
+    };
+  };
+  li:first-child {
+    border-top: 1px solid #ddd;
+  };
+}
+
+.add-drink {
+  text-align: center;
+
+  .btn {
+    width: 60%;
+  }
 }

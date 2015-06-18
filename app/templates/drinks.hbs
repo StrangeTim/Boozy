@@ -1,7 +1,12 @@
-<h1>Drinks We Know</h1>
-
 <div class="col-sm-4">
-  <ul>
+
+  <h3 class="text-center">Drinks We Know</h3>
+
+  <div class='add-drink'>
+    {{#link-to 'drinks.new' classNames="btn btn-info"}}Add a drink?{{/link-to}}
+  </div>
+
+  <ul class="drink-list list-unstyled">
     {{#each drink in model}}
       <li>
         {{#link-to 'drink' drink.id}}
@@ -10,10 +15,6 @@
       </li>
     {{/each}}
   </ul>
-
-  <div class='add-drink'>
-    {{#link-to 'drinks.new'}}Add a drink?{{/link-to}}
-  </div>
 </div>
 
 <div class="col-sm-8">

@@ -16,4 +16,4 @@ var DrinkController = {
   }
 };
 
-export default Ember.ObjectController.extend(DrinkController)
+export default Ember.ObjectController.extend(DrinkController);

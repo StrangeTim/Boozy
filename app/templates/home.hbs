@@ -1,0 +1,76 @@
+<style>
+  body {
+    height: 100%;
+    background: url("/assets/bar.jpeg") no-repeat;
+    background-size: cover;
+  }
+
+  .navbar {
+    display: none;
+    background: transparent;
+  }
+
+  body * {
+    padding-top: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
+
+  body h1 {
+    font-size: 6em;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: url(/assets/overlay4.png) repeat rgba(0,0,0,0.3);
+    height: 100%;
+  }
+
+  .btn-mega-outline {
+    padding: 20px 100px;
+    border: 1px solid white;
+    font-size: 2em;
+  }
+
+  .btn-mega-outline:hover {
+    background-color: rgba(255, 255, 255, .3);
+    color: white;
+  }
+
+  .lead {
+    margin-top: 45px;
+  }
+
+  .landing-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
+    max-height: 400px;
+    max-width: 800px;
+  }
+</style>
+
+<div class="container">
+  <div class="overlay">
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center landing-wrapper">
+      <h1>Let's Get Boozy</h1>
+
+      {{#link-to 'drinks' classNames="text-center btn btn-mega-outline"}}Take a shot{{/link-to}}
+
+      <p class="lead">
+        Boozy is a community to rate and discuss drinks. The cause and solution to all of life's problems.
+      </p>
+    </div>
+  </div>
+</div>
