@@ -9,6 +9,9 @@ var NewDrinkController = {
         subtype: this.get('subtype')
       });
       newDrink.save();
+      this.set('name', "");
+      this.set('type', "");
+      this.set('subtype', "");
       this.transitionToRoute('drinks');
     }
   }

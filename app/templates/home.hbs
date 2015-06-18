@@ -5,6 +5,11 @@
     background-size: cover;
   }
 
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
   .navbar {
     display: none;
     background: transparent;
@@ -49,13 +54,18 @@
 
   .landing-wrapper {
     position: absolute;
-    top: 0px;
+    top: -20px;
     left: 0px;
     bottom: 0px;
     right: 0px;
     margin: auto;
     max-height: 400px;
     max-width: 800px;
+    -webkit-animation: fadein 1.5s;
+       -moz-animation: fadein 1.5s;
+        -ms-animation: fadein 1.5s;
+         -o-animation: fadein 1.5s;
+            animation: fadein 1.5s;
   }
 </style>
 

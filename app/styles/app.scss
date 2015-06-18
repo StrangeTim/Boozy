@@ -24,43 +24,17 @@ body {
     box-shadow:       0 1px 6px #B2B2B2;
     display:          block;
     padding:          10px 18px;
-    margin:           1em (6px + 12px);
+    margin:           0px;
     position:         relative;
     vertical-align:   top;
 }
 
-
 .bubble.left {
     text-align: left;
-
-    .tail {
-        top:      12px;
-        left:   -(6px + 12px);
-
-        &:before {
-            left:              12px;
-            -webkit-transform: skewX( -45deg );
-            -moz-transform:    skewX( -45deg );
-            -o-transform:      skewX( -45deg );
-        }
-    }
 }
-
 
 .bubble.right {
     text-align: right;
-
-    .tail {
-        top:      12px;
-        right:   -(6px + 12px);
-
-        &:before {
-            right:              12px;
-            -webkit-transform: skewX( 45deg );
-            -moz-transform:    skewX( 45deg );
-            -o-transform:      skewX( 45deg );
-        }
-    }
 }
 
 .comment-header {
@@ -70,24 +44,43 @@ body {
 
 .drink-list {
   margin-top: 15px;
-
+  > a {
+    display: block;
+  };
   li {
+    padding: 10px 0;
     margin: 3px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #111;
     a {
-      display: block;
       line-height: 30px;
     };
-  };
-  li:first-child {
-    border-top: 1px solid #ddd;
   };
 }
 
 .add-drink {
   text-align: center;
+  text-shadow: none;
 
   .btn {
     width: 60%;
   }
+}
+
+.drink-details li span:first-child {
+  display: inline-block;
+  width: 75px;
+}
+
+.circle {
+  font-size: 13px;
+  float: right;
+  display: inline-block;
+  width: 30px;
+  height: 24px;
+  text-align: center;
+  text-shadow: none;
+  color: white;
+  background: url('/assets/comment-bubble.png') no-repeat;
+  background-size: 43px;
+  background-position: -8px -11px;
 }

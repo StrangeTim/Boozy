@@ -16,18 +16,18 @@
   }
 
   .stroke {
-    color: #fff;
+    color: #000;
     text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
   }
 
   body * {
     padding-top: 0px;
     font-family: 'Montserrat', sans-serif;
-    color: white;
+    color: black;
   }
 
   body h1 {
@@ -50,7 +50,18 @@
     margin-top: 45px;
   }
 
+  .light-overlay {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
 </style>
+
+<div class="light-overlay"></div>
 
 <div class="container">
 
@@ -65,11 +76,14 @@
 
       <ul class="drink-list list-unstyled">
         {{#each drink in model}}
-          <li>
-            {{#link-to 'drink' drink.id}}
+          {{#link-to 'drink' drink.id}}
+            <li>
               {{drink.name}}
-            {{/link-to}}
-          </li>
+              <span class="circle">
+                {{comment-count drink}}
+              </span>
+            </li>
+          {{/link-to}}
         {{/each}}
       </ul>
     </div>
