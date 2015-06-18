@@ -21,7 +21,13 @@
 
   <button class='btn btn-warning' {{action 'edit'}}>Edit</button>
   <button class='btn btn-danger' {{action 'delete'}}>Delete</button>
-{{/if}}<br>
+{{/if}}
+
+<div class="add-comment">
+  {{#link-to 'new-comment'}}<button class="btn btn-info">Add a comment?</button>{{/link-to}}
+</div>
+
+{{outlet}}
 
 <div class="chat">
   <h4>What people are saying about {{model.name}}:</h4>
@@ -36,9 +42,3 @@
     {{/each}}
   </ul>
 </div>
-<br><br>
-<div class="add-comment">
-  {{#link-to 'new-comment'}}<button class="btn btn-info">Add a comment?</button>{{/link-to}}
-</div>
-
-{{outlet}}

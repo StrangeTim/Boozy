@@ -18,10 +18,10 @@
   .stroke {
     color: #000;
     text-shadow:
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-    1px 1px 0 #fff;
+    -1px -1px 0 #ddd,
+    1px -1px 0 #ddd,
+    -1px 1px 0 #ddd,
+    1px 1px 0 #ddd;
   }
 
   body * {
@@ -56,40 +56,36 @@
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(255,255,255, 0.75);
+    background-color: rgba(255,255,255, 0.85);
   }
-
 </style>
 
 <div class="light-overlay"></div>
 
-<div class="container">
+<div class="stroke">
+  <div class="col-sm-6">
 
-  <div class="stroke">
-    <div class="col-sm-4">
+    <h3 class="text-center">Drinks We Know</h3>
 
-      <h3 class="text-center">Drinks We Know</h3>
-
-      <div class='add-drink'>
-        {{#link-to 'drinks.new' classNames="btn btn-info"}}Add a drink?{{/link-to}}
-      </div>
-
-      <ul class="drink-list list-unstyled">
-        {{#each drink in model}}
-          {{#link-to 'drink' drink.id}}
-            <li>
-              {{drink.name}}
-              <span class="circle">
-                {{comment-count drink}}
-              </span>
-            </li>
-          {{/link-to}}
-        {{/each}}
-      </ul>
+    <div class='add-drink'>
+      {{#link-to 'drinks.new' classNames="btn btn-info"}}Add a drink?{{/link-to}}
     </div>
 
-    <div class="col-sm-8">
-      {{outlet}}
-    </div>
+    <ul class="drink-list list-unstyled">
+      {{#each drink in model}}
+        {{#link-to 'drink' drink.id}}
+          <li>
+            {{drink.name}}
+            <span class="circle">
+              {{comment-count drink}}
+            </span>
+          </li>
+        {{/link-to}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-sm-6">
+    {{outlet}}
   </div>
 </div>

@@ -46,10 +46,13 @@ body {
   margin-top: 15px;
   > a {
     display: block;
+    &:hover {
+      background: rgba(255,255,255,.5);
+      text-decoration: none;
+    };
   };
   li {
     padding: 10px 0;
-    margin: 3px 0;
     border-bottom: 1px solid #111;
     a {
       line-height: 30px;
