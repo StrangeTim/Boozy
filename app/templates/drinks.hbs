@@ -1,22 +1,81 @@
-<div class="col-sm-4">
 
-  <h3 class="text-center">Drinks We Know</h3>
 
-  <div class='add-drink'>
-    {{#link-to 'drinks.new' classNames="btn btn-info"}}Add a drink?{{/link-to}}
+<style>
+  body {
+    background-image: url("/assets/overlay4.png"), url("/assets/beer.jpg");
+    background-repeat: repeat;
+  }
+
+  .navbar {
+    background: rgba(255,255,255,.8);
+  }
+
+  .navbar a {
+    color: #444 !important;
+    font-weight: bold;
+  }
+
+  .stroke {
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
+
+  body * {
+    padding-top: 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+  }
+
+  body h1 {
+    font-size: 6em;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: url(/assets/overlay4.png) repeat rgba(0,0,0,0.3);
+    height: 100%;
+  }
+
+  .lead {
+    margin-top: 45px;
+  }
+
+</style>
+
+<div class="container">
+
+  <div class="stroke">
+    <div class="col-sm-4">
+
+      <h3 class="text-center">Drinks We Know</h3>
+
+      <div class='add-drink'>
+        {{#link-to 'drinks.new' classNames="btn btn-info"}}Add a drink?{{/link-to}}
+      </div>
+
+      <ul class="drink-list list-unstyled">
+        {{#each drink in model}}
+          <li>
+            {{#link-to 'drink' drink.id}}
+              {{drink.name}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-sm-8">
+      {{outlet}}
+    </div>
   </div>
-
-  <ul class="drink-list list-unstyled">
-    {{#each drink in model}}
-      <li>
-        {{#link-to 'drink' drink.id}}
-          {{drink.name}}
-        {{/link-to}}
-      </li>
-    {{/each}}
-  </ul>
-</div>
-
-<div class="col-sm-8">
-  {{outlet}}
 </div>
